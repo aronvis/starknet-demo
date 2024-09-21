@@ -4,6 +4,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import { Layout } from "@/components/layout";
 import { muiTheme } from "@/features/theme";
+import { StarknetProvider } from "@/blockchain";
 import "@/styles/globals.css";
 
 const roboto = Roboto({
@@ -26,11 +27,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.variable}>
-        <AppRouterCacheProvider>
-          <ThemeProvider theme={muiTheme}>
-            <Layout>{children}</Layout>
-          </ThemeProvider>
-        </AppRouterCacheProvider>
+        <StarknetProvider>
+          <AppRouterCacheProvider>
+            <ThemeProvider theme={muiTheme}>
+              <Layout>{children}</Layout>
+            </ThemeProvider>
+          </AppRouterCacheProvider>
+        </StarknetProvider>
       </body>
     </html>
   );
