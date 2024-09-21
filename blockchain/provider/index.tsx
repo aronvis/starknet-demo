@@ -19,8 +19,8 @@ export function StarknetProvider({ children }: StarknetProviderProps) {
     const provider = publicProvider()
     const chains = [mainnet, sepolia]
     const connectors = [
-        new InjectedConnector({ options: { id: 'braavos', name: 'Braavos' } }),
         new InjectedConnector({ options: { id: 'argentX', name: 'Argent X' } }),
+        new InjectedConnector({ options: { id: 'braavos', name: 'Braavos' } }),
         new WebWalletConnector({ url: 'https://web.argent.xyz' }),
     ]
 

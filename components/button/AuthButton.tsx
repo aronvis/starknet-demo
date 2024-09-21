@@ -17,10 +17,10 @@ export function AuthButton() {
     const { starknetkitConnectModal } = useStarknetkitConnectModal({
         connectors: [
             new InjectedConnector({
-                options: { id: 'braavos', name: 'Braavos' },
+                options: { id: 'argentX', name: 'Argent X' },
             }),
             new InjectedConnector({
-                options: { id: 'argentX', name: 'Argent X' },
+                options: { id: 'braavos', name: 'Braavos' },
             }),
             new WebWalletConnector({ url: 'https://web.argent.xyz' }),
         ],
