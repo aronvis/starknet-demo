@@ -1,6 +1,6 @@
 import * as React from "react";
 import { AuthButton } from "@/components/button/AuthButton";
-import styles from "./Navbar.module.css";
+import styles from "./navbar.module.css";
 
 export function Navbar() {
   return (

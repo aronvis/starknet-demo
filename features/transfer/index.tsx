@@ -1,13 +1,18 @@
 import { Button, TextField } from "@mui/material";
-import styles from "./layout.module.css";
+import styles from "./transfer.module.css";
 
 export function TransferScreen() {
   return (
-    <div>
-      <div>Token Balence</div>
-      <TextField></TextField>
-      <TextField></TextField>
-      <Button variant="contained">Tranfer</Button>
+    <div id={styles.container}>
+      <h2>Transfer</h2>
+      <TextField
+        label="Recipient Address"
+        className={styles.textField}
+      ></TextField>
+      <TextField label="Amount" className={styles.textField}></TextField>
+      <Button variant="contained" className={styles.button} size="large">
+        Tranfer
+      </Button>
     </div>
   );
 }
