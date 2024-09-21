@@ -1,0 +1,5 @@
+.next/
+blockchain/contracts
+node_modules/
+*.json
+*.lock
