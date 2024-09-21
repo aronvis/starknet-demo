@@ -6,7 +6,6 @@ import {
     publicProvider,
     StarknetConfig,
 } from '@starknet-react/core'
-import { WebWalletConnector } from 'starknetkit/webwallet'
 import { sepolia, mainnet } from '@starknet-react/chains'
 import { voyager } from '@starknet-react/core'
 
@@ -21,7 +20,6 @@ export function StarknetProvider({ children }: StarknetProviderProps) {
     const connectors = [
         new InjectedConnector({ options: { id: 'argentX', name: 'Argent X' } }),
         new InjectedConnector({ options: { id: 'braavos', name: 'Braavos' } }),
-        new WebWalletConnector({ url: 'https://web.argent.xyz' }),
     ]
 
     return (

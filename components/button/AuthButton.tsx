@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react'
 import { InjectedConnector } from 'starknetkit/injected'
-import { WebWalletConnector } from 'starknetkit/webwallet'
 import { useStarknetkitConnectModal } from 'starknetkit'
 import { useConnect, useDisconnect, useAccount } from '@starknet-react/core'
 import Button from '@mui/material/Button'
@@ -22,7 +21,6 @@ export function AuthButton() {
             new InjectedConnector({
                 options: { id: 'braavos', name: 'Braavos' },
             }),
-            new WebWalletConnector({ url: 'https://web.argent.xyz' }),
         ],
         dappName: 'Token Transfer',
         modalTheme: 'dark',
