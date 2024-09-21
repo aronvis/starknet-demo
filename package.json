@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emotion/cache": "^11.13.1",
+    "@mui/material": "^6.1.1",
     "@mui/material-nextjs": "^6.1.1",
     "@starknet-react/chains": "^3.0.0",
     "@starknet-react/core": "^3.0.0",
