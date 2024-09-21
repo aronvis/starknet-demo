@@ -5,8 +5,8 @@ import styles from "./Navbar.module.css";
 export function Navbar() {
   return (
     <div id={styles.navbar}>
-      <div>Dapp Token Transfer</div>
-      <Button variant="contained">Sign In</Button>
+      <div>Token Transfer</div>
+      <Button variant="contained">Connect</Button>
     </div>
   );
 }
