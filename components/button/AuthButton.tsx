@@ -1,32 +1,23 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import {
-    useConnect,
-    useDisconnect,
-    useAccount,
-    useNetwork,
-    InjectedConnector,
-} from '@starknet-react/core'
+import { useStarknetkitConnectModal } from 'starknetkit'
+import { useConnect, useDisconnect, useAccount } from '@starknet-react/core'
 import Button from '@mui/material/Button'
 import { shortenString } from '@/services/string'
-import { useStarknetkitConnectModal } from 'starknetkit'
 
 export function AuthButton() {
     // Hooks and global state
     const { connect } = useConnect()
-
+    const { disconnect } = useDisconnect()
+    const { account, address } = useAccount()
     const { starknetkitConnectModal } = useStarknetkitConnectModal({
         dappName: 'Token Exchange',
         modalTheme: 'system',
     })
 
-    const { disconnect } = useDisconnect()
-    const { account, address } = useAccount()
-    const { chain } = useNetwork()
-
     // Local state
-    const [title, setTitle] = useState<string>('')
+    const [title, setTitle] = useState<string>('Connect')
 
     useEffect(() => {
         updateTitle()
@@ -34,27 +25,26 @@ export function AuthButton() {
 
     function updateTitle() {
         const adressString = shortenString(address ?? '')
-        const buttonTitle = address ? adressString : 'Disconnect'
+        const buttonTitle = address ? adressString : 'Connect'
         setTitle(buttonTitle)
     }
 
-    async function connectWallet() {
+    async function onClick() {
+        // Disconnect wallet
+        if (!account) {
+            disconnect()
+            return
+        }
+
+        // Connect
         const { connector } = await starknetkitConnectModal()
         if (connector) {
             connect({ connector })
         }
     }
 
-    if (!account) {
-        return (
-            <Button variant="contained" onClick={() => connectWallet()}>
-                {title}
-            </Button>
-        )
-    }
-
     return (
-        <Button variant="contained" onClick={() => disconnect()}>
+        <Button variant="contained" onClick={onClick}>
             {title}
         </Button>
     )
