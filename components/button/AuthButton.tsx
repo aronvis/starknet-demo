@@ -1,6 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { InjectedConnector } from 'starknetkit/injected'
+import { WebWalletConnector } from 'starknetkit/webwallet'
 import { useStarknetkitConnectModal } from 'starknetkit'
 import { useConnect, useDisconnect, useAccount } from '@starknet-react/core'
 import Button from '@mui/material/Button'
@@ -11,9 +13,19 @@ export function AuthButton() {
     const { connect } = useConnect()
     const { disconnect } = useDisconnect()
     const { account, address } = useAccount()
+
     const { starknetkitConnectModal } = useStarknetkitConnectModal({
-        dappName: 'Token Exchange',
-        modalTheme: 'system',
+        connectors: [
+            new InjectedConnector({
+                options: { id: 'braavos', name: 'Braavos' },
+            }),
+            new InjectedConnector({
+                options: { id: 'argentX', name: 'Argent X' },
+            }),
+            new WebWalletConnector({ url: 'https://web.argent.xyz' }),
+        ],
+        dappName: 'Token Transfer',
+        modalTheme: 'dark',
     })
 
     // Local state
@@ -31,7 +43,7 @@ export function AuthButton() {
 
     async function onClick() {
         // Disconnect wallet
-        if (!account) {
+        if (account) {
             disconnect()
             return
         }
