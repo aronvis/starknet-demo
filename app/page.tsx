@@ -1,5 +1,5 @@
-import { LandingScreen } from "@/features/landing";
+import { TransferScreen } from "@/features/transfer";
 
 export default function Home() {
-  return <LandingScreen></LandingScreen>;
+  return <TransferScreen></TransferScreen>;
 }
