@@ -1,5 +1,5 @@
-import styles from "./page.module.css";
+import { LandingScreen } from "@/features/landing";
 
 export default function Home() {
-  return <div className={styles.page}></div>;
+  return <LandingScreen></LandingScreen>;
 }
