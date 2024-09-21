@@ -10,7 +10,7 @@ export function TransferScreen() {
         className={styles.textField}
       ></TextField>
       <TextField label="Amount" className={styles.textField}></TextField>
-      <Button variant="contained" className={styles.button} size="large">
+      <Button variant="contained" id={styles.button} size="large">
         Tranfer
       </Button>
     </div>
