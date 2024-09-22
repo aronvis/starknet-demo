@@ -44,7 +44,7 @@ To run the program you first need to install the correct version of node. Please
 
 ## Run smart contract
 
-1. Install `Starkli` and `Scarb` using these [steps] (https://docs.starknet.io/quick-start/environment-setup/)
+1. Install `Starkli` and `Scarb` using these [steps](https://docs.starknet.io/quick-start/environment-setup/)
 2. Change directory using `cd blockchain/contracts`
 3. Build your contract `scarb build`
 4. Declare smart contract on Starknet:
@@ -53,5 +53,5 @@ To run the program you first need to install the correct version of node. Please
     ```
 5. Deploy smart contract:
     ```shell
-    starkli deploy --account=~/.starkli-wallets/deployer/account.json --keystore=~/.starkli-wallets/deployer/keystore.json --network=sepolia <contact hash - received from previous step> <contructor inputs - optional> 
+    starkli deploy --account=~/.starkli-wallets/deployer/account.json --keystore=~/.starkli-wallets/deployer/keystore.json --network=sepolia <contact hash - received from previous step> <contructor inputs - optional>
     ```
