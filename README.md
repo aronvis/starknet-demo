@@ -1,8 +1,6 @@
 ## Intro
 
-This is a sample Starknet project using Next 14 with material UI. The app allows users to transfer funds from one wallet address to another.
-
-The project uses starknetkit for the wallet modal and @starknet-react to get connected wallet info using react hooks.
+This is a sample Starknet project using `Next 14` with `material UI`. The app allows users to transfer funds from one wallet address to another. The project uses `starknetkit` for the wallet modal and `starknet-react` to get connected wallet info using react hooks.
 
 ## Update node version (optional)
 
