@@ -38,11 +38,20 @@ To run the program you first need to install the correct version of node. Please
 
 ## Run frontend
 
-1. Run yarn to install all dependencies
-2. Run yarn dev to start the frontend
+1. Run `yarn` to install all dependencies
+2. Run `yarn dev` to start the frontend
 3. Open http://localhost:3000 in your browser
 
 ## Run smart contract
 
-1. Change directory using `cd blockchain/contracts`
-2. Build your contract `scarb build`
+1. Install `Starkli` and `Scarb` using these [steps] (https://docs.starknet.io/quick-start/environment-setup/)
+2. Change directory using `cd blockchain/contracts`
+3. Build your contract `scarb build`
+4. Declare smart contract on Starknet:
+    ```shell
+     starkli declare blockchain/contracts/target/dev/erc20_new_MyToken.contract_class.json --network=sepolia --compiler-version=2.1.0
+    ```
+5. Deploy smart contract:
+    ```shell
+    starkli deploy <contact hash - received from step declaration step> <contructor inputs - optional> --network=sepolia
+    ```
