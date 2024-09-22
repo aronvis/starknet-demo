@@ -46,4 +46,3 @@ To run the program you first need to install the correct version of node. Please
 
 1. Change directory using `cd blockchain/contracts`
 2. Build your contract `scarb build`
-3.
