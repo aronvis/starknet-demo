@@ -49,9 +49,9 @@ To run the program you first need to install the correct version of node. Please
 3. Build your contract `scarb build`
 4. Declare smart contract on Starknet:
     ```shell
-     starkli declare blockchain/contracts/target/dev/erc20_new_MyToken.contract_class.json --network=sepolia --compiler-version=2.1.0
+     starkli declare --account=~/.starkli-wallets/deployer/account.json --keystore=~/.starkli-wallets/deployer/keystore.json --network=sepolia --compiler-version=2.7.1 target/dev/erc20_new_MyToken.contract_class.json
     ```
 5. Deploy smart contract:
     ```shell
-    starkli deploy <contact hash - received from step declaration step> <contructor inputs - optional> --network=sepolia
+    starkli deploy --account=~/.starkli-wallets/deployer/account.json --keystore=~/.starkli-wallets/deployer/keystore.json --network=sepolia <contact hash - received from previous step> <contructor inputs - optional> 
     ```
