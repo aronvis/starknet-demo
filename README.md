@@ -43,4 +43,6 @@ To run the program you first need to install the correct version of node. Please
 
 ## Run smart contract
 
-1. 
+1. Change directory using `cd blockchain/contract`
+2. Build your contract `scarb build`
+3. 
