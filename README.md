@@ -1,9 +1,10 @@
 This is a sample Starknet project using Next 14 with material UI. The app allows users to transfer funds from one wallet address to another.
 
-The project uses starknetkit for the wallet modal and @starknet-react to get connected wallet info using react hooks. 
+The project uses starknetkit for the wallet modal and @starknet-react to get connected wallet info using react hooks.
 
 ## Update node version (optional)
-To run the program you first need to install the correct version of node. Please skip this step if running `node -v` in the terminal shows the default version 18 or later. 
+
+To run the program you first need to install the correct version of node. Please skip this step if running `node -v` in the terminal shows the default version 18 or later.
 
 1. Install node (If it's not installed):
 
@@ -43,6 +44,6 @@ To run the program you first need to install the correct version of node. Please
 
 ## Run smart contract
 
-1. Change directory using `cd blockchain/contract`
+1. Change directory using `cd blockchain/contracts`
 2. Build your contract `scarb build`
-3. 
+3.
