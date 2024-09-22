@@ -42,7 +42,7 @@ To run the program you first need to install the correct version of node. Please
 2. Run `yarn dev` to start the frontend
 3. Open http://localhost:3000 in your browser
 
-## Run smart contract
+## Deploy smart contract
 
 1. Install `Starkli` and `Scarb` using the official [starknet instructions](https://docs.starknet.io/quick-start/environment-setup/)
 2. Change directory using `cd blockchain/contracts`
