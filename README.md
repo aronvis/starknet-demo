@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a sample Starknet project using Next 14 with material UI. The app allows users to transfer funds from one wallet address to another.
 
-## Getting Started
+The project uses starknetkit for the wallet modal and @starknet-react to get connected wallet info using react hooks. 
 
-First, run the development server:
+## Update node version (optional)
+To run the program you first need to install the correct version of node. Please skip this step if running `node -v` in the terminal shows the default version 18 or later. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Install node (If it's not installed):
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    ```shell
+    brew install node
+    ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Install nvm (If it's not installed):
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-   Create .zshrc file for **Mac only** (If it doesn't exist):
+    ```shell
+    touch ~/.zshrc
+    ```
+-   Install nvm:
+    ```shell
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+    ```
 
-## Learn More
+3. Use node 16.17.0 as default:
 
-To learn more about Next.js, take a look at the following resources:
+-   Install node 16.17.0 (Check `nvm ls` for installed versions):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```shell
+    nvm install 16.17.0
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+-   Set node 16.17.0 as the default:
+    ```shell
+    nvm alias default 16.17.0
+    ```
 
-## Deploy on Vercel
+## Run frontend
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Run yarn to install all dependencies
+2. Run yarn dev to start the frontend
+3. Open http://localhost:3000 in your browser
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Run smart contract
+
+1. 
