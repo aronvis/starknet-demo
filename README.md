@@ -38,8 +38,8 @@ To run the program you first need to install the correct version of node. Please
 
 ## Run frontend
 
-1. Run yarn to install all dependencies
-2. Run yarn dev to start the frontend
+1. Run `yarn` to install all dependencies
+2. Run `yarn dev` to start the frontend
 3. Open http://localhost:3000 in your browser
 
 ## Run smart contract
