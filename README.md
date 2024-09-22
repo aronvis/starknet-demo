@@ -53,5 +53,5 @@ To run the program you first need to install the correct version of node. Please
     ```
 5. Deploy smart contract:
     ```shell
-    starkli deploy <contact hash - received from step declaration step> <contructor inputs - optional> --network=sepolia
+    starkli deploy <contact hash - received from previous step> <contructor inputs - optional> --network=sepolia
     ```
