@@ -1,9 +1,9 @@
 'use client'
 
+import { useState } from 'react'
 import { useGetWalletBalance, useTransfer } from '@/hooks'
 import { Button, TextField } from '@mui/material'
 import styles from './transfer.module.css'
-import { useState } from 'react'
 
 export function TransferScreen() {
     // Hooks and global state
