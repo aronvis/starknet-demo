@@ -45,7 +45,7 @@ To run the program you first need to install the correct version of node. Please
 ## Deploy smart contract
 
 1. Install `Starkli` and `Scarb` using the official [starknet instructions](https://docs.starknet.io/quick-start/environment-setup/)
-2. Change directory using `cd blockchain/contracts`
+2. Change directory using `cd contracts`
 3. Build your contract `scarb build`
 4. Declare smart contract on Starknet:
     ```shell

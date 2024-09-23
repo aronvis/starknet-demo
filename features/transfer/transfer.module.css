@@ -14,4 +14,28 @@
 #button {
     max-width: 400px;
     width: 100%;
+    margin-bottom: 50px;
+}
+
+#info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 400px;
+    gap: 10px;
+}
+
+.infoText {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+#transaction {
+    font-size: 16px;
+    line-height: 20px;
+    width: 100%;
+    max-width: 400px;
+    word-wrap: break-word;
 }
