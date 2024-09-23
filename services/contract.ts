@@ -3,9 +3,9 @@ export const ContractDecimals = 18
 
 // Printed in terminal after deployment
 export const ContractAddress =
-    '0x01d89600ed3781f417f3ff86df23342a80bc9f3588859c1c8583b2291276afda'
+    '0x04fe4efebb6aca709b3ecaa274c507fc1b5843cd4f551b78223d68c9c2e750fe'
 
-// Found here: https://sepolia.voyager.online/contract/0x01d89600ed3781f417f3ff86df23342a80bc9f3588859c1c8583b2291276afda#code
+// Found here: https://sepolia.voyager.online/contract/0x04fe4efebb6aca709b3ecaa274c507fc1b5843cd4f551b78223d68c9c2e750fe#code
 export const ContractABI = [
     {
         type: 'impl',
@@ -346,6 +346,10 @@ export const ContractABI = [
         type: 'constructor',
         name: 'constructor',
         inputs: [
+            {
+                name: 'initial_supply',
+                type: 'core::integer::u256',
+            },
             {
                 name: 'owner',
                 type: 'core::starknet::contract_address::ContractAddress',

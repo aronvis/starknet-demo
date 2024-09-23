@@ -46,9 +46,10 @@ mod MyToken {
     }
 
     #[constructor]
-    fn constructor(ref self: ContractState, owner: ContractAddress) {
+    fn constructor(ref self: ContractState, initial_supply: u256, owner: ContractAddress) {
         self.erc20.initializer("MyToken", "MTK");
         self.ownable.initializer(owner);
+        self.erc20.mint(owner, initial_supply);
     }
 
     #[abi(embed_v0)]
