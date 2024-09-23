@@ -48,27 +48,22 @@ export function useGetWalletBalance() {
     return { data: balance, isLoading, error }
 }
 
-export function useTransfer() {
+export function useTransfer(toAddress: string, amount: number) {
     // Hooks and global state
     const { address } = useAccount()
-    const { data, status, sendAsync } = useSendTransaction({})
     const { contract } = useContract({
         abi: ContractABI as any,
         address: ContractAddress,
     })
 
-    async function tranfer(toAddress: string, amount: number) {
-        if (!contract || !address || !toAddress || !amount) {
-            throw new Error('Invalid transfer params')
-        }
+    const calls = useMemo(() => {
+        if (!contract || !toAddress || !address) return []
 
         const convertedAmount: Uint256 = cairo.uint256(
             amount * 10 ** ContractDecimals
         )
-        await sendAsync([
-            contract.populate('transfer', [address, convertedAmount]),
-        ])
-    }
+        return [contract.populate('transfer', [address, convertedAmount])]
+    }, [contract, address, toAddress, amount])
 
-    return { data, status, tranfer }
+    return useSendTransaction({ calls })
 }
