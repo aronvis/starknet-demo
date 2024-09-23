@@ -57,7 +57,8 @@ export function useTransfer(toAddress: string, amount: number) {
     })
 
     const calls = useMemo(() => {
-        if (!contract || !toAddress || !address) return []
+        // Invalid tranfer params
+        if (!contract || !address || !toAddress || !amount) return []
 
         const convertedAmount: Uint256 = cairo.uint256(
             amount * 10 ** ContractDecimals
