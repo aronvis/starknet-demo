@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useMemo } from 'react'
+import { useMemo } from 'react'
 import {
     useAccount,
     useContract,
@@ -14,7 +14,6 @@ import {
     ContractABI,
 } from '@/services'
 import { cairo, Uint256 } from 'starknet'
-import { TransferStatus } from '@/types'
 
 // Returns the wallet balance in number format
 export function useGetWalletBalance() {
@@ -49,45 +48,27 @@ export function useGetWalletBalance() {
     return { data: balance, isLoading, error }
 }
 
-export function useTransfer(toAddress: string, amount: number) {
+export function useTransfer() {
     // Hooks and global state
     const { address } = useAccount()
+    const { data, status, sendAsync } = useSendTransaction({})
     const { contract } = useContract({
         abi: ContractABI as any,
         address: ContractAddress,
     })
 
-    const calls = useMemo(() => {
-        if (!contract || !address || !toAddress || !amount) return []
+    async function tranfer(toAddress: string, amount: number) {
+        if (!contract || !address || !toAddress || !amount) {
+            throw new Error('Invalid transfer params')
+        }
 
         const convertedAmount: Uint256 = cairo.uint256(
             amount * 10 ** ContractDecimals
         )
-        return contract.populateTransaction['transfer']!(
-            toAddress,
-            convertedAmount
-        )
-    }, [contract, address, toAddress, amount])
-
-    const { data, isPending, isIdle, isSuccess, sendAsync } =
-        useSendTransaction(calls)
-
-    // Local state
-    const [status, setStatus] = useState<TransferStatus>(TransferStatus.IDLE)
-
-    useEffect(() => {
-        updateStatus()
-    }, [isIdle, isPending, isSuccess])
-
-    function updateStatus() {
-        const status = isSuccess
-            ? TransferStatus.SUCCESS
-            : isPending
-            ? TransferStatus.PENDING
-            : TransferStatus.IDLE
-
-        setStatus(status)
+        await sendAsync([
+            contract.populate('transfer', [address, convertedAmount]),
+        ])
     }
 
-    return { data, status, sendAsync }
+    return { data, status, tranfer }
 }

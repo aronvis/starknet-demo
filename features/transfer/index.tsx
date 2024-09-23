@@ -8,11 +8,11 @@ import styles from './transfer.module.css'
 export function TransferScreen() {
     // Hooks and global state
     const { data: walletBalance } = useGetWalletBalance()
+    const { data, status, tranfer } = useTransfer()
 
     // Local state
     const [toAddress, setToAdress] = useState<string>('')
     const [amount, setAmount] = useState<string>('')
-    const { data, status, sendAsync } = useTransfer(toAddress, Number(amount))
 
     // UI state
     return (
@@ -38,7 +38,7 @@ export function TransferScreen() {
                 variant="contained"
                 id={styles.button}
                 size="large"
-                onClick={() => sendAsync()}
+                onClick={() => tranfer(toAddress, Number(amount))}
             >
                 Tranfer
             </Button>
