@@ -6,7 +6,7 @@ export const ContractAddress =
     '0x01d89600ed3781f417f3ff86df23342a80bc9f3588859c1c8583b2291276afda'
 
 // Found here: https://sepolia.voyager.online/contract/0x01d89600ed3781f417f3ff86df23342a80bc9f3588859c1c8583b2291276afda#code
-export const MyTokenContractABI = [
+export const ContractABI = [
     {
         type: 'impl',
         name: 'UpgradeableImpl',
