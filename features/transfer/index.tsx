@@ -46,7 +46,7 @@ export function TransferScreen() {
                 <h2>Transfer Info</h2>
                 <div className={styles.infoText}>Balance: {walletBalance}</div>
                 <div className={styles.infoText}>Status {status}</div>
-                <div className={styles.infoText}>
+                <div id={styles.transaction}>
                     Hash: {data?.transaction_hash}
                 </div>
             </div>

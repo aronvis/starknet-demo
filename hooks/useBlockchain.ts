@@ -62,7 +62,7 @@ export function useTransfer(toAddress: string, amount: number) {
         const convertedAmount: Uint256 = cairo.uint256(
             amount * 10 ** ContractDecimals
         )
-        return [contract.populate('transfer', [address, convertedAmount])]
+        return [contract.populate('transfer', [toAddress, convertedAmount])]
     }, [contract, address, toAddress, amount])
 
     return useSendTransaction({ calls })
