@@ -38,7 +38,7 @@ export function TransferScreen() {
                 variant="contained"
                 id={styles.button}
                 size="large"
-                onClick={() => sendAsync}
+                onClick={() => sendAsync()}
             >
                 Tranfer
             </Button>
